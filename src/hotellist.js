@@ -1,6 +1,6 @@
 import React from 'react';
 // import ReactDOM from 'react-dom';
-// import './index.css';
+import './hotellist.css';
 // import App from './App';
 // import './todo.js';
 // import registerServiceWorker from './registerServiceWorker';
@@ -21,9 +21,8 @@ export class Hotellist extends React.Component {
     render() {
   		const hotels = this._getHotels() || [];
     	return(<div>
-
+      <h2>Hotel Info.</h2>
     	<Form addHotel={this._addHotel.bind(this)} />
-    	<h2>Hotel Info.</h2>
     	{this._getEnoughInfo(hotels.length)}
     	<h4 className="hotel-count">Number of hotels: {hotels.length}</h4>
     	<div className="hotel-list">{hotels}</div>
@@ -41,6 +40,7 @@ export class Hotellist extends React.Component {
                id={hotel.id}
                onDelete={this._deleteHotel.bind(this)}
                 />);
+
     	});
 
 	}
@@ -96,15 +96,11 @@ class Form extends React.Component {
       <form className="hotel-form" onSubmit={this._handleSubmit.bind(this)}>
 
         <div className="hotel-form-fields">
-          <input placeholder="Hotel Name:" ref={input => this._name = input} />
-          <textarea placeholder="Hotel Info:" ref={textarea => this._body = textarea} onChange={this._getCharacterCount.bind(this)}></textarea>
+        <div className="name-form"><input className="name-input" placeholder="Hotel Name:" ref={input => this._name = input} /></div>
+        <div className="text-form"><textarea className="text-input" placeholder="Hotel Info:" ref={textarea => this._body = textarea} onChange={this._getCharacterCount.bind(this)}></textarea></div>  
         </div>
         <p>{this.state.characters} characters</p>
-        <div className="hotel-form-actions">
-          <button type="submit">
-            Post Hotel info.
-          </button>
-        </div>
+        <div className="hotel-form-actions"><button type="submit">Post Hotel Info.</button></div>
       </form>
     );
   }
@@ -138,20 +134,13 @@ class Hotelinfo extends React.Component {
       <div className="hotel-info">
         
         <h3 className="hotel-header">{this.props.name}</h3>
-        <p className="hotel-body">
-          {this.props.body}
-        </p>
-
+        <p className="hotel-body">{this.props.body}</p>
         <div>Hotel ID: {this.props.id}</div>
-
-        <div className="hotel-actions">
-          <a href="#" onClick={this._handleDelete.bind(this)}>Delete hotels</a>
-        </div>
+        <div className="hotel-actions"><a href="#" onClick={this._handleDelete.bind(this)}>Delete hotels</a></div>
 
       </div>
     );
   }
-
 
  _handleDelete(event) {
     event.preventDefault();
@@ -160,4 +149,6 @@ class Hotelinfo extends React.Component {
 
 }
 
+//I just added hotellogo.jpg into src folder. I will add the hotel logo into each post.
+//And, I will separate hotellist.js file into each component(Hotellist component, Form component, Hotelinfo component).
 

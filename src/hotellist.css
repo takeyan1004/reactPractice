@@ -1,0 +1,39 @@
+
+/*
+I added the below css code to form the hotellist.js
+
+*/
+
+.hotel-count{
+
+font-style: italic;
+
+}
+
+.name-form{
+
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 80px;
+	margin-left: 80px;
+
+}
+
+.text-form{ 
+
+	position: relative;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 80px;
+	margin-left: 80px;
+
+}
+
+.name-input{
+	text-align: center;
+}
+
+.text-input{
+	text-align: center;
+}
+
