@@ -47,6 +47,7 @@ export class Form extends React.Component {
     this.setState({
       characters: this._body.value.length
     });
+    
   }
   
   _handleSubmit(event) {

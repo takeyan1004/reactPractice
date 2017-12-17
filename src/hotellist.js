@@ -88,7 +88,7 @@ export class Hotellist extends React.Component {
 
 
 //I just added hotellogo.jpg into src folder. I will add the hotel logo into each post. →　image doesn't show up
-//And, I will separate hotellist.js file into each component(Hotellist component, Form component, Hotelinfo component).
-//Tried to use Bootstrap but was stuck on FormGroup
+//And, I will separate hotellist.js file into each component(Hotellist component, Form component, Hotelinfo component). →completed
+//Tried to use Bootstrap but was stuck on FormGroup → I could implemented FormGroup
 //I will use bootstrap to make the style better and add more functions to the app!
 
