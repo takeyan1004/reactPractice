@@ -55,7 +55,7 @@ export class Hotellist extends React.Component {
 			return (<div>Great work! You are an expert of hotel industry</div>);
 		}
 
-	}	
+	}
 
     _addHotel(hotelName, hotelInfo, hotelPhoto) {
  	    let hotel = {

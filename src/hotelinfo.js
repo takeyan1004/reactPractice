@@ -18,7 +18,7 @@ export class Hotelinfo extends React.Component {
 
 */}
 
-    <Panel header={this.props.name}  bsStyle="info">
+    <Panel header={this.props.name} bsStyle="info">
       {this.props.body}
       <div>Hotel ID: {this.props.id}</div>
       <div className="hotel-actions"><a href="#" onClick={this._handleDelete.bind(this)}>Delete hotels</a></div>
