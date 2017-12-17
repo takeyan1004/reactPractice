@@ -12,9 +12,9 @@ export class Hotellist extends React.Component {
 
     	this.state = {
       	// showComments: false,
-      		hotels: [{name: "Hilton", body: "Hilton offers great service", id: "2012"}, 
-            	    {name: "Marriot", body: "Marriot is the biggest hotel chains", id: "30"}, 
-                	{name: "Palace hotel", body: "Palace hotel is the Japanese hotel chain", id: "7"}]
+      		hotels: [{name: "Hilton", body: "Hilton offers great service", id: "2012", photo: "/hotellogo.jpg"}, 
+            	    {name: "Marriot", body: "Marriot is the biggest hotel chain", id: "30", photo: "/hotellogo.jpg"}, 
+                	{name: "Palace hotel", body: "Palace hotel is the Japanese hotel chain", id: "7", photo: "/hotellogo.jpg"}]
 	    };
   	}
 
@@ -39,6 +39,7 @@ export class Hotellist extends React.Component {
                body={hotel.body}
                id={hotel.id}
                onDelete={this._deleteHotel.bind(this)}
+               photo={hotel.photo}
                 />);
 
     	});
@@ -53,14 +54,14 @@ export class Hotellist extends React.Component {
 
 	}	
 
-    _addHotel(hotelName, hotelInfo) {
+    _addHotel(hotelName, hotelInfo, hotelPhoto) {
  	    let hotel = {
         //id: Math.floor(Math.random() * (9999 - this.state.hotels.length + 1)) + this.state.hotels.length,
         //The tutorial shows the above code, but I think the below code is enough to create unique id.
         id: Math.floor(Math.random() * 9999 ) + this.state.hotels.length,
-
         name: hotelName,
-        body: hotelInfo
+        body: hotelInfo,
+        photo: hotelPhoto
     };
 
     	this.setState({
@@ -105,7 +106,7 @@ class Form extends React.Component {
     );
   }
 
-  _getCharacterCount(e) {
+  _getCharacterCount() {
     this.setState({
       characters: this._body.value.length
     });
@@ -119,7 +120,7 @@ class Form extends React.Component {
       return;
     }
 
-    this.props.addHotel(this._name.value, this._body.value);
+    this.props.addHotel(this._name.value, this._body.value, this.props.photo);
     
     this._name.value = '';
     this._body.value = '';
@@ -132,7 +133,8 @@ class Hotelinfo extends React.Component {
   render() {
     return(
       <div className="hotel-info">
-        
+
+       <div> <img src={this.props.photo} alt={`${this.props.name}'s picture`}/></div>
         <h3 className="hotel-header">{this.props.name}</h3>
         <p className="hotel-body">{this.props.body}</p>
         <div>Hotel ID: {this.props.id}</div>
@@ -149,6 +151,6 @@ class Hotelinfo extends React.Component {
 
 }
 
-//I just added hotellogo.jpg into src folder. I will add the hotel logo into each post.
+//I just added hotellogo.jpg into src folder. I will add the hotel logo into each post. →　image doesn't show up
 //And, I will separate hotellist.js file into each component(Hotellist component, Form component, Hotelinfo component).
 
