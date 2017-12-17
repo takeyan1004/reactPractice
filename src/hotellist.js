@@ -1,8 +1,6 @@
 import React from 'react';
 // import ReactDOM from 'react-dom';
 import { Button } from 'react-bootstrap';
-import { FormGroup } from 'react-bootstrap';
-import { FormControl } from 'react-bootstrap';
 import './hotellist.css';
 
 // import App from './App';
@@ -16,9 +14,9 @@ export class Hotellist extends React.Component {
 
     	this.state = {
       	// showComments: false,
-      		hotels: [{name: "Hilton", body: "Hilton offers great service", id: "2012", photo: "/hotellogo.jpg"}, 
-            	    {name: "Marriot", body: "Marriot is the biggest hotel chain", id: "30", photo: "/hotellogo.jpg"}, 
-                	{name: "Palace hotel", body: "Palace hotel is the Japanese hotel chain", id: "7", photo: "/hotellogo.jpg"}]
+      		hotels: [{name: "Hilton", body: "Hilton offers great service", id: "2012"},
+            	    {name: "Marriot", body: "Marriot is the biggest hotel chain", id: "30"},
+                	{name: "Palace hotel", body: "Palace hotel is the Japanese hotel chain", id: "7"}]
 	    };
   	}
 
@@ -43,7 +41,6 @@ export class Hotellist extends React.Component {
                body={hotel.body}
                id={hotel.id}
                onDelete={this._deleteHotel.bind(this)}
-               photo={hotel.photo}
                 />);
 
     	});
@@ -65,7 +62,6 @@ export class Hotellist extends React.Component {
         id: Math.floor(Math.random() * 9999 ) + this.state.hotels.length,
         name: hotelName,
         body: hotelInfo,
-        photo: hotelPhoto
     };
 
     	this.setState({
@@ -98,32 +94,20 @@ class Form extends React.Component {
 
   render() {
     return (
-      
+
 // on the way to implementing bootstrap style
 
       <form className="hotel-form" onSubmit={this._handleSubmit.bind(this)}>
 
-<div className="hotel-form-fields">
-    <FormGroup>
-      <div className="name-form"><FormControl className="name-input" type="text" placeholder="Hotel Name:" ref={input => this._name = input} /></div>
-    </FormGroup>
- <FormGroup bsSize="large">
-      <div className="text-form"><FormControl className="text-input" type="text" placeholder="Hotel Info:" ref={input => this._body = input} onChange={this._getCharacterCount.bind(this)} /></div>
-    </FormGroup>
- </div>
-        <p>{this.state.characters} characters</p>
-        <div className="hotel-form-actions"><Button bsStyle="primary" type="submit">Post Hotel Info.</Button></div>
-
-     
         <div className="hotel-form-fields">
         <div className="name-form"><input className="name-input" placeholder="Hotel Name:" ref={input => this._name = input} /></div>
         <div className="text-form"><textarea className="text-input" placeholder="Hotel Info:" ref={textarea => this._body = textarea} onChange={this._getCharacterCount.bind(this)}></textarea></div>  
         </div>
         <p>{this.state.characters} characters</p>
         <div className="hotel-form-actions"><Button bsStyle="primary" type="submit">Post Hotel Info.</Button></div>
-       
 
       </form>
+
     );
   }
 
@@ -155,7 +139,6 @@ class Hotelinfo extends React.Component {
     return(
       <div className="hotel-info">
 
-       <div> <img src={this.props.photo} alt={`${this.props.name}'s picture`}/></div>
         <h3 className="hotel-header">{this.props.name}</h3>
         <p className="hotel-body">{this.props.body}</p>
         <div>Hotel ID: {this.props.id}</div>
