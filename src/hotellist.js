@@ -1,6 +1,10 @@
 import React from 'react';
 // import ReactDOM from 'react-dom';
+import { Button } from 'react-bootstrap';
+import { FormGroup } from 'react-bootstrap';
+import { FormControl } from 'react-bootstrap';
 import './hotellist.css';
+
 // import App from './App';
 // import './todo.js';
 // import registerServiceWorker from './registerServiceWorker';
@@ -94,14 +98,31 @@ class Form extends React.Component {
 
   render() {
     return (
+      
+// on the way to implementing bootstrap style
+
       <form className="hotel-form" onSubmit={this._handleSubmit.bind(this)}>
 
+<div className="hotel-form-fields">
+    <FormGroup>
+      <div className="name-form"><FormControl className="name-input" type="text" placeholder="Hotel Name:" ref={input => this._name = input} /></div>
+    </FormGroup>
+ <FormGroup bsSize="large">
+      <div className="text-form"><FormControl className="text-input" type="text" placeholder="Hotel Info:" ref={input => this._body = input} onChange={this._getCharacterCount.bind(this)} /></div>
+    </FormGroup>
+ </div>
+        <p>{this.state.characters} characters</p>
+        <div className="hotel-form-actions"><Button bsStyle="primary" type="submit">Post Hotel Info.</Button></div>
+
+     
         <div className="hotel-form-fields">
         <div className="name-form"><input className="name-input" placeholder="Hotel Name:" ref={input => this._name = input} /></div>
         <div className="text-form"><textarea className="text-input" placeholder="Hotel Info:" ref={textarea => this._body = textarea} onChange={this._getCharacterCount.bind(this)}></textarea></div>  
         </div>
         <p>{this.state.characters} characters</p>
-        <div className="hotel-form-actions"><button type="submit">Post Hotel Info.</button></div>
+        <div className="hotel-form-actions"><Button bsStyle="primary" type="submit">Post Hotel Info.</Button></div>
+       
+
       </form>
     );
   }
@@ -153,4 +174,5 @@ class Hotelinfo extends React.Component {
 
 //I just added hotellogo.jpg into src folder. I will add the hotel logo into each post. →　image doesn't show up
 //And, I will separate hotellist.js file into each component(Hotellist component, Form component, Hotelinfo component).
+//Tried to use Bootstrap but was stuck on FormGroup
 
