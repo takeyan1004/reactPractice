@@ -52,7 +52,7 @@ export class Hotellist extends React.Component {
 
 	}
 
-    _addHotel(hotelName, hotelInfo, hotelPhoto) {
+    _addHotel(hotelName, hotelInfo) {
  	    let hotel = {
         //id: Math.floor(Math.random() * (9999 - this.state.hotels.length + 1)) + this.state.hotels.length,
         //The tutorial shows the above code, but I think the below code is enough to create unique id.

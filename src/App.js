@@ -18,7 +18,7 @@ export class App extends Component {
       </div>
     </div> 
       </Col>
-      <Col xsHidden md={4}></Col>
+      <Col xs={6} md={4}></Col>
 	</Row>
 
     );

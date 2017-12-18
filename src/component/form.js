@@ -58,7 +58,7 @@ export class Form extends React.Component {
       return;
     }
 
-    this.props.addHotel(this._name.value, this._body.value, this.props.photo);
+    this.props.addHotel(this._name.value, this._body.value);
     
     this._name.value = '';
     this._body.value = '';
