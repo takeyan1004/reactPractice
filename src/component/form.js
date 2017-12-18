@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import { FormGroup } from 'react-bootstrap';
 import { FormControl } from 'react-bootstrap';
-// import './hotellist.css';
+import './hotellist.css';
 
 
 export class Form extends React.Component {

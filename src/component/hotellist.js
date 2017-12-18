@@ -1,13 +1,8 @@
 import React from 'react';
 // import ReactDOM from 'react-dom';
-
-import './hotellist.css';
 import {Hotelinfo} from './hotelinfo';
 import {Form} from './form';
 
-// import App from './App';
-// import './todo.js';
-// import registerServiceWorker from './registerServiceWorker';
 
 export class Hotellist extends React.Component {
 
@@ -15,7 +10,7 @@ export class Hotellist extends React.Component {
     super();
 
     	this.state = {
-      	// showComments: false,
+        
       		hotels: [{name: "Hilton", body: "Hilton offers great service", id: "2012"},
             	    {name: "Marriot", body: "Marriot is the biggest hotel chain", id: "30"},
                 	{name: "Palace hotel", body: "Palace hotel is the Japanese hotel chain", id: "7"}]
@@ -24,7 +19,7 @@ export class Hotellist extends React.Component {
 
     render() {
   		const hotels = this._getHotels() || [];
-    	return(<div>
+    	return(<div className="hotel-info">
       <h2>Hotel Info.</h2>
     	<Form addHotel={this._addHotel.bind(this)} />
     	{this._getEnoughInfo(hotels.length)}
@@ -84,11 +79,4 @@ export class Hotellist extends React.Component {
   	} 
 
 }
-
-
-
-//I just added hotellogo.jpg into src folder. I will add the hotel logo into each post. →　image doesn't show up
-//And, I will separate hotellist.js file into each component(Hotellist component, Form component, Hotelinfo component). →completed
-//Tried to use Bootstrap but was stuck on FormGroup → I could implemented FormGroup
-//I will use bootstrap to make the style better and add more functions to the app!
 

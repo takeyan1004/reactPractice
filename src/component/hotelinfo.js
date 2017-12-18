@@ -1,6 +1,5 @@
 import React from 'react';
 // import ReactDOM from 'react-dom';
-// import './hotellist.css';
 import { Panel } from 'react-bootstrap';
 
 
@@ -10,6 +9,8 @@ export class Hotelinfo extends React.Component {
       <div className="hotel-info">
 
 {/* 
+
+Here is the html code for the below Panel component
 
 <h3 className="hotel-header">{this.props.name}</h3>
         <p className="hotel-body">{this.props.body}</p>

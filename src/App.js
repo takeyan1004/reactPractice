@@ -1,20 +1,30 @@
 import React, { Component } from 'react';
 import './App.css';
-import {Hotellist} from './hotellist';
+import { Col } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
+import {Hotellist} from './component/hotellist';
 
-class App extends Component {
+
+export class App extends Component {
   render() {
     return (
-    <div className="App">
+
+	<Row className="show-grid">
+      <Col xs={6} md={4}></Col>
+      <Col xs={6} md={4}>
+	<div className="App">
       <div className="hotel-list">
         <Hotellist />
       </div>
     </div> 
+      </Col>
+      <Col xsHidden md={4}></Col>
+	</Row>
+
     );
   }
 }
 
 
-export default App;
 
 
